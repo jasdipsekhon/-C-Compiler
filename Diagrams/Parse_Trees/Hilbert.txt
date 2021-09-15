@@ -1,0 +1,2 @@
+For some reason the parse tree for Hilbert was unable to be converted into a png.
+If you want to see it (it's quite massive) generate it yourself using the provided instructions in Build/INSTALL
