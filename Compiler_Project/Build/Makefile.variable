@@ -1,0 +1,49 @@
+#===============Directories and Variables===============#
+#Names of the applications
+APP_NAME := Team_Y.app
+
+#Names of the object directories
+APP_OBJ_DIR_NAME := App_Object_Files
+ANTLR_OBJ_DIR_NAME := Antlr_Object_Files
+
+#Extentions to compile
+EXTENTIONS := .cpp .cc
+
+
+#Base directory where all the source code is located
+#ROOT_DIR must be defined in calling makefile
+CODE_DIR := $(ROOT_DIR)/Source_Files
+
+#Directories with application code
+APP_INC_DIR := $(CODE_DIR)/include
+APP_SRC_DIR := $(CODE_DIR)/src
+
+
+BACKEND_SRC_DIR := $(APP_SRC_DIR)/backend/compiler $(APP_SRC_DIR)/backend/converter $(APP_SRC_DIR)/backend/interpreter
+INTERMEDIATE_SRC_DIR := $(APP_SRC_DIR)/intermediate/symtab $(APP_SRC_DIR)/intermediate/type $(APP_SRC_DIR)/intermediate/util
+FRONTEND_SRC_DIR := $(APP_SRC_DIR)/frontend
+
+#Antlr Directories
+ANTLR_SRC_DIR := $(CODE_DIR)/antlr
+ANTLR_RUNTIME_HEADER := $(ANTLR_SRC_DIR)/antlr_runtime/include
+ANTLR_RUNTIME_LIB := $(ANTLR_SRC_DIR)/antlr_runtime/libraries
+
+
+#Antlr specific variables
+ANTLR_SRC_DIR := $(CODE_DIR)/antlr
+ANTLR_GRAMMER_NAME := uC
+ANTLR_FILE := antlr-4.8-complete.jar
+ANTLR_RR_FILE := rrd-antlr4-0.1.2.jar
+ANTLR_OUTPUT_DIR := $(CODE_DIR)/generated_source
+
+
+
+#Main files to include/exclude to fix potential issues with multiple mains
+APP_MAIN := $(APP_SRC_DIR)/uC.cpp
+
+
+#All directories that need to be compiled here
+ALL_SRC_DIR_APP := $(APP_SRC_DIR) $(APP_INC_DIR)
+
+#Add on all the Antlr-specific directories
+ALL_SRC_DIR_APP += $(ANTLR_SRC_DIR) $(ANTLR_OUTPUT_DIR) $(BACKEND_SRC_DIR) $(INTERMEDIATE_SRC_DIR) $(FRONTEND_SRC_DIR)

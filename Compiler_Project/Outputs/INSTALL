@@ -1,0 +1,5 @@
+To compile a generated .j file into a java class file, run the following:
+./jasmin.sh [ProgramName].j
+
+Once the .class file has been generated, run the following:
+java [ProgramName]
