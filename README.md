@@ -1,5 +1,11 @@
 # µC-Compiler
 
+µC (micro-C) is a 3 pass compiler:
+
+1st pass: Frontend syntax (Read and verifythe original source program; build the parse tree)
+2nd pass: Frontend semantics (Visit parse tree, enter identifier and type information into the symbol table, and perform type checking)
+3rd pass: Backend semantics (Revisit the parse tree and emit object code)
+
 ![image](https://user-images.githubusercontent.com/48773234/133545021-db8b7210-79e8-44f0-bcd6-d2f3d121bdea.png)
 
 ![image](https://user-images.githubusercontent.com/48773234/133545159-bcb35e40-2848-4add-90f3-032bc994aba8.png)
